@@ -1,4 +1,6 @@
 .env
+.vscode
+.metals
 env
 venv
 temp
