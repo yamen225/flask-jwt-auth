@@ -54,6 +54,9 @@ class LoginAPI(MethodView):
     User Login Resource
     """
 
+    def get(self):
+        return "I only get triggered by GET requests!"
+
     def post(self):
         # get the post data
         post_data = request.get_json()
@@ -203,7 +206,7 @@ auth_blueprint.add_url_rule(
 auth_blueprint.add_url_rule(
     '/auth/login',
     view_func=login_view,
-    methods=['POST']
+    methods=['POST', 'GET']
 )
 
 auth_blueprint.add_url_rule(
