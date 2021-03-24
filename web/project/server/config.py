@@ -2,9 +2,15 @@
 
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
+database_user_name = os.getenv('DATABASE_USER', 'database_user')
+database_password = os.getenv('DATABASE_PASSWORD', 'database_password')
+database_host = os.getenv('SQL_HOST', 'host')
+database_port = os.getenv('SQL_PORT', '')
 # postgres_local_base = 'postgresql://sohba_user:password@localhost/'
-postgres_local_base = 'mysql+mysqlconnector://root:0000@localhost/'
-database_name = 'flask_jwt_auth'
+postgres_local_base = 'mysql+mysqlconnector://{0}:{1}@{2}:{3}/'.format(
+    database_user_name, database_password, database_host, database_port
+)
+database_name = os.getenv('DATABASE_NAME', 'my_schema')
 
 
 class BaseConfig:

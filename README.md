@@ -69,3 +69,11 @@ With coverage:
 ```sh
 $ python manage.py cov
 ```
+
+### Docker
+
+create mysql folder in root project to save db.
+
+```sh
+$ docker-compose up
+```
